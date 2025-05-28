@@ -2,36 +2,29 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-  </style>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <div class="container">
+  <div class="ext-container">
     <input type="text" id="selectorInput" 
            placeholder="Введите CSS-селектор"
-           class="input-field">
+           class="ext-input-field">
     
-    <div class="button-group">
-      <button id="saveBtn" class="btn save-btn">
+    <div class="ext-button-group">
+      <button id="saveBtn" class="ext-btn ext-save-btn">
         Инициализировать
       </button>
-      <div class="small-buttons">
-        <button id="decrementBtn" class="btn decrement-btn" disabled>
+      <div class="ext-small-buttons">
+        <button id="decrementBtn" class="ext-btn ext-decrement-btn" disabled>
           -
         </button>
-        <button id="resetBtn" class="btn reset-btn" disabled>
+        <button id="resetBtn" class="ext-btn ext-reset-btn" disabled>
           ↻
         </button>
       </div>
     </div>
     
-    <div class="counter">
+    <div class="ext-counter">
       <span>Счёт: </span>
       <span id="counterValue">0</span>
     </div>
