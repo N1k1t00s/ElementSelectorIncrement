@@ -4,6 +4,7 @@ function init() {
   const input = document.getElementById('selectorInput');
   const saveBtn = document.getElementById('saveBtn');
   const decrementBtn = document.getElementById('decrementBtn');
+  const resetBtn = document.getElementById('resetBtn');
   const counterValue = document.getElementById('counterValue');
 
   // Загрузка состояния
@@ -38,13 +39,26 @@ function init() {
     });
   });
 
+  // Сброс счетчика
+  resetBtn.addEventListener('click', () => {
+    chrome.storage.local.set({count: 0}, () => {
+      updateCounter(0);
+    });
+  });
+
   // Обновление интерфейса
-  chrome.storage.onChanged.addListener(({count}) => {
-    if(count) updateCounter(count.newValue);
+  chrome.storage.onChanged.addListener((changes) => {
+    if(changes.count) {
+      updateCounter(changes.count.newValue);
+    }
   });
 
   function updateCounter(value) {
     counterValue.textContent = value;
-    decrementBtn.disabled = value <= 0;
+    const isDisabled = value <= 0;
+    decrementBtn.disabled = isDisabled;
+    resetBtn.disabled = isDisabled;
   }
 }
+
+// Content script остается без изменений

@@ -4,6 +4,8 @@ body {
   padding: 15px;
   font-family: 'Segoe UI', sans-serif;
   background: #f3f4f6;
+  font-size: 14px;
+  color: #1f2937;
 }
 
 .container {
@@ -18,6 +20,7 @@ body {
   border-radius: 8px;
   font-size: 14px;
   transition: border-color 0.3s;
+  width: 100%;
 }
 
 .input-field:focus {
@@ -31,8 +34,7 @@ body {
 }
 
 .btn {
-  flex: 1;
-  padding: 12px;
+  padding: 10px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -40,6 +42,7 @@ body {
   transition: 
     transform 0.2s,
     opacity 0.2s;
+  text-align: center;
 }
 
 .btn:active {
@@ -49,6 +52,18 @@ body {
 .save-btn {
   background: #3b82f6;
   color: white;
+  flex: 1;
+}
+
+.small-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.small-buttons .btn {
+  width: 40px;
+  padding: 8px 5px;
+  font-size: 14px;
 }
 
 .decrement-btn {
@@ -56,7 +71,13 @@ body {
   color: white;
 }
 
-.decrement-btn:disabled {
+.reset-btn {
+  background: #6b7280;
+  color: white;
+}
+
+.decrement-btn:disabled,
+.reset-btn:disabled {
   background: #9ca3af;
   cursor: not-allowed;
   opacity: 0.7;

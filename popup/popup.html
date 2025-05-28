@@ -2,6 +2,13 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  </style>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
@@ -14,9 +21,14 @@
       <button id="saveBtn" class="btn save-btn">
         Инициализировать
       </button>
-      <button id="decrementBtn" class="btn decrement-btn" disabled>
-        -
-      </button>
+      <div class="small-buttons">
+        <button id="decrementBtn" class="btn decrement-btn" disabled>
+          -
+        </button>
+        <button id="resetBtn" class="btn reset-btn" disabled>
+          ↻
+        </button>
+      </div>
     </div>
     
     <div class="counter">
